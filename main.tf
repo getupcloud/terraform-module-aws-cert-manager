@@ -27,7 +27,7 @@ data "aws_iam_policy_document" "aws_certmanager" {
     ]
   }
 
-    statement {
+  statement {
     effect = "Allow"
 
     actions = [
@@ -52,7 +52,7 @@ module "irsa_aws_certmanager" {
   version = "~> 4.2"
 
   create_role                   = true
-  role_name                     = local.name_prefix               
+  role_name                     = local.name_prefix
   provider_url                  = var.cluster_oidc_issuer_url
   role_policy_arns              = [aws_iam_policy.aws_certmanager.arn]
   oidc_fully_qualified_subjects = ["system:serviceaccount:${var.service_account_namespace}:${var.service_account_name}"]
