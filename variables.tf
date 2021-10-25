@@ -24,7 +24,7 @@ variable "service_account_namespace" {
 
 variable "service_account_name" {
   description = "ServiceAccount name for cert-manager"
-  default     = "eks-infra-certmanager"
+  default     = "cert-manager"
 }
 variable "tags" {
   description = "AWS tags to apply to resources"
