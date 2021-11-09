@@ -23,7 +23,7 @@ data "aws_iam_policy_document" "aws_certmanager" {
     ]
 
     resources = [
-      "arn:aws:route53:::hostedzone/${var.hosted_zone}"
+      "arn:aws:route53:::hostedzone/${var.hosted_zone_id}"
     ]
   }
 
