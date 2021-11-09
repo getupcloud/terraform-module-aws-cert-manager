@@ -7,8 +7,8 @@ variable "customer_name" {
   type        = string
 }
 
-variable "hosted_zone" {
-  description = "hosted zone route53"
+variable "hosted_zone_id" {
+  description = "AWS Route53 Hosted Zone ID to certmanager automatically handle"
   type        = string
 }
 
