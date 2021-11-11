@@ -11,10 +11,10 @@ variable "hosted_zone_id" {
   description = "AWS Route53 Hosted Zone ID to certmanager automatically handle"
   type        = string
 
-#  validation {
-#    condition     = length(var.hosted_zone_id) > 0
-#    error_message = "The hosted_zone_id value must not be empty."
-#  }
+  validation {
+    condition     = length(var.hosted_zone_id) > 0
+    error_message = "The hosted_zone_id value must not be empty."
+  }
 }
 
 variable "cluster_oidc_issuer_url" {
