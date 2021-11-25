@@ -12,7 +12,7 @@ variable "hosted_zone_id" {
   type        = string
 
   validation {
-    condition     = length(var.hosted_zone_id) > 0
+    condition     = var.hosted_zone_id == null || length(var.hosted_zone_id) > 0
     error_message = "The hosted_zone_id value must not be empty."
   }
 }
