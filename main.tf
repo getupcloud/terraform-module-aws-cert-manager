@@ -22,9 +22,7 @@ data "aws_iam_policy_document" "aws_certmanager" {
       "route53:ChangeResourceRecordSets"
     ]
 
-    resources = [
-      "arn:aws:route53:::hostedzone/${var.hosted_zone_id}"
-    ]
+    resources = [for h in var.hosted_zone_ids : "arn:aws:route53:::hostedzone/${h}"]
   }
 
   statement {

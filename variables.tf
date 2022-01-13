@@ -7,9 +7,9 @@ variable "customer_name" {
   type        = string
 }
 
-variable "hosted_zone_id" {
+variable "hosted_zone_ids" {
   description = "AWS Route53 Hosted Zone ID to certmanager automatically handle"
-  type        = string
+  type        = list(string)
 
   validation {
     condition     = length(var.hosted_zone_id) > 0
@@ -31,6 +31,7 @@ variable "service_account_name" {
   description = "ServiceAccount name for cert-manager"
   default     = "cert-manager"
 }
+
 variable "tags" {
   description = "AWS tags to apply to resources"
   type        = any
