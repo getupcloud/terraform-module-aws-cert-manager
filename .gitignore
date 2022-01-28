@@ -32,3 +32,6 @@ override.tf.json
 .terraformrc
 terraform.rc
 .history/
+
+providers.tf
+variables-tests.tf
