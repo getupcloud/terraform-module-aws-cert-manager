@@ -10,8 +10,7 @@ f fmt:
 	terraform fmt
 
 setup:
-	ln -fs tests/providers.tf
-	ln -fs tests/variables-tests.tf
+	for i in tests/*; do ln -vfs $$i; done
 
 clean:
-	rm providers.tf variables-tests.tf
+	for i in tests/*; do rm -v $${i#tests/}; done
