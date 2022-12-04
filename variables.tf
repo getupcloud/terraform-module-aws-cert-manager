@@ -1,9 +1,10 @@
 variable "cluster_name" {
-  description = "EKS Cluster name"
+  description = "Cluster name"
   type        = string
 }
+
 variable "customer_name" {
-  description = "customer name"
+  description = "Customer name"
   type        = string
 }
 
