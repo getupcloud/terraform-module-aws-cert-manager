@@ -42,6 +42,18 @@ data "aws_iam_policy_document" "aws_certmanager" {
     }
   }
 
+  dynamic "statement" {
+    for_each = length(var.hosted_zone_ids) > 0 ? [] : ["all_hosted_zone_ids"]
+    content {
+      effect = "Allow"
+
+      actions = [
+        "route53:ChangeResourceRecordSets"
+      ]
+
+      resources = ["arn:aws:route53:::hostedzone/*"]
+    }
+  }
 }
 
 ### AUTH BY IRSA
